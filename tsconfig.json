@@ -1,11 +1,24 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "rootDir": "./src",
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "CommonJS",
+    "moduleResolution":"node",
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
+    "checkJs":true,
     "sourceMap": true,
-  }
+    "alwaysStrict":true,
+  },
+  "exclude": [
+    "node_module", 
+    "./dist",
+    "./server", 
+    "global.d.ts",
+    "webpack.common.js",
+    "webpack.dev.js",
+    "webpack.prod.js",
+  ]
 }
