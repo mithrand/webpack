@@ -27,6 +27,9 @@
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
     "ts-loader": "^4.2.0",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.8.0",
+    "tslint-loader": "^3.6.0",
     "typescript": "^2.8.3",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.6.0",
@@ -35,7 +38,8 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "moment": "^2.22.1"
   },
   "sideEffects": [
     "*.css"

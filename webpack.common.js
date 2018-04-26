@@ -21,6 +21,12 @@ module.exports = {
   ],
   module: {
     rules:[
+      {
+        test: /\.ts$/,
+        enforce: 'pre',
+        loader: 'tslint-loader',
+        options: { /* Loader options go here */ }
+      },
       { // Carga de css
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader,"css-loader"]
@@ -36,17 +42,21 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [{
+        use: [
+          {
             loader: "style-loader" // creates style nodes from JS strings
-        }, {
+          }, 
+          {
             loader: "css-loader" // translates CSS into CommonJS
-        }, {
+          }, 
+          {
             loader: "sass-loader" // compiles Sass to CSS
-        }]
-    }
+          }
+        ]
+      }
     ]
   },
-  optimization:{
+  optimization: {
     splitChunks: { // genera un bundle separado que incluye solo las librerias de node_modules
       cacheGroups: {
         commons: {

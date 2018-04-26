@@ -1,7 +1,7 @@
-import {join} from 'lodash';
+import { join } from 'lodash';
 
-export default function printme( ev: MouseEvent): any{
+export default function printme(ev: MouseEvent): any {
   alert(
-    join(['Another', 'module', 'loaded!'], ' ')
+    join(['Another', 'module', 'loaded!'], ' '),
   );
 }
