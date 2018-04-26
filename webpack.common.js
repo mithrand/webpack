@@ -7,17 +7,20 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //webpack configuration
 module.exports = {
   entry: { // genera un bundle por cada entry point. ver output -> filename para saber que nombre tendra cada entrada 
-    app:'./src/index.ts',
-    print:'./src/components/print'
+    app:'./src/index.tsx',
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.jsx', '.js' ]
+    extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
+    alias: {
+      images: path.join(__dirname,'src/statics/images'),
+      styles: path.join(__dirname,'src/statics/styles')
+    },
   },
   plugins: [
     new CleanWebpackPlugin(['dist']), // elimina todo el contenido en la carpeta dist
-    new HtmlWebpackPlugin({ title: 'Output Management' }), // Autogenera el index.html y anade los bundles al body
+    new HtmlWebpackPlugin({ template: 'src/statics/template/index.hbs' }), // Autogenera el index.html y anade los bundles al body
     // new ExtractTextPlugin("styles.css"), // para extraer el css en un archivo independiente, aun no es compatible con webpack 4
-    new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css", chunkFilename: "[id].css"}) // para extraer el css en un archivo independiente
+    new MiniCssExtractPlugin({ filename: "css/[name].[chunkhash].css", chunkFilename: "[id].css"}) // para extraer el css en un archivo independiente
   ],
   module: {
     rules:[
@@ -29,11 +32,23 @@ module.exports = {
       },
       { // Carga de css
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader,"css-loader"]
+        use: [
+          {
+            loader:MiniCssExtractPlugin.loader
+          },
+          {
+            loader:"css-loader",
+          }]
       },
       { // Carga de ficheros
         test:/\.(png|svg|jpg|gif)$/,
-        use:['file-loader']
+        use:[{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'images/'
+          },   
+        }]
       },
       {
         test: /\.tsx?$/,
@@ -53,7 +68,11 @@ module.exports = {
             loader: "sass-loader" // compiles Sass to CSS
           }
         ]
-      }
+      },
+      {
+        test: /\.hbs$/,
+        loader: 'handlebars-loader'
+      },
     ]
   },
   optimization: {
@@ -68,7 +87,7 @@ module.exports = {
     }
   },
   output: {
-    filename: '[name].[chunkhash].bundle.js', // [name] se sustituira por el nombre del entry point [app,print...]
+    filename: 'bin/[name].[chunkhash].bundle.js', // [name] se sustituira por el nombre del entry point [app,print...]
     path: path.resolve(__dirname, 'dist'), // folder de salida
   },
 }

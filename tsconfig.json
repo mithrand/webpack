@@ -11,6 +11,11 @@
     "checkJs":true,
     "sourceMap": true,
     "alwaysStrict":true,
+    "baseUrl": ".",
+    "paths": {
+      "images/*": ["src/statics/images/*"],
+      "styles/*": ["src/statics/styles/*"],
+    }
   },
   "exclude": [
     "node_module", 
@@ -20,5 +25,6 @@
     "webpack.common.js",
     "webpack.dev.js",
     "webpack.prod.js",
+    "./src/**/__test__/*.*",
   ]
 }
