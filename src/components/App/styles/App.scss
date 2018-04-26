@@ -1,0 +1,32 @@
+@import 'base';
+
+.core-layout {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  .content-wrap {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .layout-viewport {
+    margin-top: 20px;
+  }
+  .header-decorator {
+    position: absolute;
+    right: -75px;
+    width: 100%;
+  }
+
+}
+
+@media #{$medium-and-down} {
+  .header-decorator {
+    display: none;
+  }
+  .container {
+    width: 95% !important;
+  }
+}

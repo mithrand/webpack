@@ -1,22 +1,23 @@
 import * as React from 'react';
 import './styles/App.css';
+import * as AppTypes from './types/AppTypes';
+import NavBar from 'components/NavBar';
 
 const logoSvg = require('images/logo.svg');
 
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logoSvg} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+export const app = (props: AppTypes.AppProps) => {
+  const { location:{ pathname }, children } = props;
+  return (
+    <div className="core-layout">
+      <div className="content-wrap">
+        <img className="header-decorator" src="header-decorator.png" />
+        <NavBar currentLocation={pathname} />
+        <div className="layout-viewport">
+          {children}
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
-export default App;
+export default app;

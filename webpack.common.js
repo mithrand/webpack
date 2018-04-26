@@ -13,7 +13,8 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
     alias: {
       images: path.join(__dirname,'src/statics/images'),
-      styles: path.join(__dirname,'src/statics/styles')
+      styles: path.join(__dirname,'src/statics/styles'),
+      components: path.join(__dirname,'src/components')
     },
   },
   plugins: [
@@ -56,7 +57,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.(sass|scss)$/,
         use: [
           {
             loader: "style-loader" // creates style nodes from JS strings

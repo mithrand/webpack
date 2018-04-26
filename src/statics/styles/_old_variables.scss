@@ -1,0 +1,42 @@
+// Colors defs
+$background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(250,250,250,1) 100%);
+$main-gradient: linear-gradient(to bottom, #6990e4 0%,#6990e4 36%,#71b0ee 100%);
+
+$neutral-text-color: #5A6675;
+$neutral-bg: white;
+
+$colored-bg: radial-gradient(ellipse farthest-corner at right top, #71B0EE 0%, #6990E4 100%);
+$colored-bg-contrast-color: #FFFFFF;
+
+$primary-color: #4D74CA;
+
+// Shadows
+$base-block-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+
+// Fonts
+$h1-font-size: 36px;
+$h1-font-weight: lighter;
+$font-small: 14px;
+
+$icons-path: '../../public/icons/default/' !default;
+
+// Layout
+$base-padding: 10px;
+$viewport-top-gap: 100px;
+
+// Components
+$nav-bg-color: $main-gradient;
+$nav-width: 75px;
+$nav-font-size: $font-small;
+
+$card-bg: $neutral-bg;
+$card-colored-bg: $colored-bg;
+$card-colored-bg-contrast-color: $colored-bg-contrast-color;
+$card-margin: $base-padding;
+$card-padding: 2 * $base-padding;
+$card-shadow: $base-block-shadow;
+$card-header-padding: $base-padding;
+$card-header-title-color: $primary-color;
+$card-header-title-font-size: $h1-font-size;
+$card-header-title-font-weight: $h1-font-weight;
+$card-body-padding: $base-padding;

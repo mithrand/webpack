@@ -1,0 +1,17 @@
+//@import "node_modules/materialize-css/sass/components/mixins";
+@import "node_modules/materialize-css/sass/components/color";
+@import "./variables";
+
+// Components
+$nav-bg-color: rgba(255, 255, 255, 0.05);
+$nav-width: 75px;
+
+// Font
+$font-huge: $h1-fontsize;
+$font-largest: $h4-fontsize;
+$font-larger: $h5-fontsize;
+$font-large: 1.2rem;
+$font-small: 0.85em;
+$font-smallest: 0.75em;
+
+$icons-path: '../../public/icons/sonemo/' !default;

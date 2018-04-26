@@ -15,6 +15,7 @@
     "paths": {
       "images/*": ["src/statics/images/*"],
       "styles/*": ["src/statics/styles/*"],
+      "components/*": ["src/components/*"],
     }
   },
   "exclude": [
