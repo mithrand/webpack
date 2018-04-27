@@ -51,6 +51,16 @@ module.exports = {
           },   
         }]
       },
+      { // Carga de ficheros
+        test:/\.(woff|woff2)$/,
+        use:[{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          },   
+        }]
+      },
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -64,7 +74,7 @@ module.exports = {
           }, 
           {
             loader: "css-loader" // translates CSS into CommonJS
-          }, 
+          },   
           {
             loader: "sass-loader" // compiles Sass to CSS
           }

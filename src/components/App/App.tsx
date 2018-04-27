@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './styles/App.css';
+import './styles/App.scss';
 import * as AppTypes from './types/AppTypes';
 import NavBar from 'components/NavBar';
 
@@ -18,6 +18,6 @@ export const app = (props: AppTypes.AppProps) => {
       </div>
     </div>
   );
-}
+};
 
 export default app;

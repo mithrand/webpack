@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { IndexLink, Link } from 'react-router';
-import './NavBar.scss';
+import { Link } from 'react-router-dom';
+import './styles/NavBar.scss';
 import { NavBarProps } from './types/NavBarTypes';
 
 const guessClassName = (currentLocation:string, matchLocation:string, strict:boolean) => {
@@ -14,9 +14,9 @@ export const NavBar = (props:NavBarProps) => {
   const { currentLocation } = props;
   return(
   <nav className="navbar">
-    <IndexLink to="/" className={guessClassName(currentLocation, '/', true)}>
+    <Link to="/" className={guessClassName(currentLocation, '/', true)}>
       <span className="icon icon-logo" />
-    </IndexLink>
+    </Link>
     <Link to="/alerts" className={guessClassName(currentLocation, '/alerts',false)}>
       <span className="icon icon-alerts" />
       <div className="navbar-label">Alerts</div>

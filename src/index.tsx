@@ -1,14 +1,22 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './components/App';
 import 'styles/index.scss';
 import { AppProps } from './components/App/types/AppTypes';
+import App from './components/App';
+import { BrowserRouter } from 'react-router-dom';
+// import { routes } from './router/routes';
 
-const appProps: AppProps = {
-  location:{
+const appProps = { 
+  location:{ 
     pathname:'',
-  },
-  children: '',
+  }, 
+  children:'',
 };
 
-ReactDOM.render(<App {...appProps} />,document.getElementById('root') as HTMLElement);
+const index = (
+  <BrowserRouter>
+    <App {...appProps} />
+  </BrowserRouter>
+);
+
+ReactDOM.render(index,document.getElementById('root') as HTMLElement);

@@ -1,35 +1,13 @@
+$roboto-font-path: "~materialize-css/fonts/roboto/";
 @import '~normalize.css/normalize';
-@import 'base';
-
-// Reset
-@import "node_modules/materialize-css/sass/components/normalize";
-
-// Framework
-@import "node_modules/materialize-css/sass/components/global";
-@import "node_modules/materialize-css/sass/components/icons-material-design";
-@import "node_modules/materialize-css/sass/components/grid";
-@import "node_modules/materialize-css/sass/components/typography";
-@import "node_modules/materialize-css/sass/components/cards";
-@import "node_modules/materialize-css/sass/components/tooltip";
-@import "node_modules/materialize-css/sass/components/buttons";
-@import "node_modules/materialize-css/sass/components/dropdown";
-@import "node_modules/materialize-css/sass/components/waves";
-@import "node_modules/materialize-css/sass/components/modal";
-@import "node_modules/materialize-css/sass/components/collapsible";
-@import "node_modules/materialize-css/sass/components/materialbox";
-@import "node_modules/materialize-css/sass/components/forms/forms";
-@import "node_modules/materialize-css/sass/components/sideNav";
-@import "node_modules/materialize-css/sass/components/preloader";
-@import "node_modules/materialize-css/sass/components/slider";
-
-@import "icons";
+@import "~materialize-css/sass/materialize.scss";
+@import "variables";
 
 html {
   box-sizing: border-box;
   font-family: 'Open Sans';
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  // background-image: linear-gradient(-179deg, rgba(195,158,101,0.26) 18%, rgba(195,158,101,0.08) 70%, rgba(195,158,101,0.00) 87%), linear-gradient(90deg, rgba(195,158,101,0.15) 3%, rgba(195,158,101,0.25) 49%, rgba(195,158,101,0.15) 100%), linear-gradient(-179deg, #010F19 53%, #021727 80%, #043153 98%);
   background-image: linear-gradient(90deg, rgba(195,158,101,0.15) 3%, rgba(195,158,101,0.25) 49%, rgba(195,158,101,0.15) 100%), linear-gradient(-179deg, #010F19 53%, #021727 80%, #043153 98%);
 }
 
@@ -169,9 +147,6 @@ i {
         flex: 1;
         word-break: break-word;
       }
-      // a {
-      //   word-wrap: break-word;
-      // }
     }
   }
 }
