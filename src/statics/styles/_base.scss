@@ -1,5 +1,5 @@
-//@import "node_modules/materialize-css/sass/components/mixins";
-@import "node_modules/materialize-css/sass/components/color";
+@import "~materialize-css/sass/components/mixins";
+@import "~materialize-css/sass/components/color";
 @import "./variables";
 
 // Components
@@ -14,4 +14,9 @@ $font-large: 1.2rem;
 $font-small: 0.85em;
 $font-smallest: 0.75em;
 
-$icons-path: '../../public/icons/sonemo/' !default;
+// Colors defs
+$brand-color: #c39e65;
+$primary-color-contrast: white;
+$secondary-color-contrast: white;
+
+$icons-path: '~/fonts' !default;

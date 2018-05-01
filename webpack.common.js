@@ -42,7 +42,7 @@ module.exports = {
           }]
       },
       { // Carga de ficheros
-        test:/\.(png|svg|jpg|gif)$/,
+        test:/\.(png|svg|jpg|gif|ico)$/,
         use:[{
           loader: 'file-loader',
           options: {
@@ -52,7 +52,7 @@ module.exports = {
         }]
       },
       { // Carga de ficheros
-        test:/\.(woff|woff2)$/,
+        test:/\.(woff|woff2|ttf|eot)$/,
         use:[{
           loader: 'file-loader',
           options: {
@@ -69,15 +69,13 @@ module.exports = {
       {
         test: /\.(sass|scss)$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
-            loader: "style-loader" // creates style nodes from JS strings
-          }, 
+            loader: 'css-loader' // translates CSS into CommonJS
+          },
           {
-            loader: "css-loader" // translates CSS into CommonJS
-          },   
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
+            loader: 'sass-loader' // compiles Sass to CSS
+          },
         ]
       },
       {
