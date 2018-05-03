@@ -15,7 +15,8 @@ module.exports = {
       images: path.join(__dirname,'src/statics/images'),
       styles: path.join(__dirname,'src/statics/styles'),
       components: path.join(__dirname,'src/components'),
-      actions: path.join(__dirname,'src/redux/actions'),
+      dispatchers: path.join(__dirname,'src/redux/dispatchers'),
+      api: path.join(__dirname,'src/api'),
       fonts: path.join(__dirname,'fonts')
     },
   },

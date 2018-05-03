@@ -9,7 +9,7 @@
     "watch_prod": "webpack --config webpack.prod.js --watch",
     "build": "webpack --config webpack.prod.js",
     "serve": "node ./server/index.js",
-    "debug": "concurrently --kill-others \"npm run watch_dev\" \"npm run serve\"",
+    "debug": "concurrently --kill-others \"  npm run watch_dev\" \"DEBUG=express-http-proxy npm run serve\"",
     "start": "concurrently --kill-others \"npm run watch_prod\" \"npm run serve\""
   },
   "author": "",
@@ -47,6 +47,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.5",
     "materialize-css": "https://github.com/marcbc/materialize/tarball/7a0f549d461f2f512078ca52a19d97445351bf06",
     "moment": "^2.22.1",
@@ -58,8 +59,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
-    "redux-logger": "^3.0.6",
-    "whatwg-fetch": "^2.0.4"
+    "redux-logger": "^3.0.6"
   },
   "sideEffects": [
     "*.css"

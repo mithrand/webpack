@@ -16,7 +16,8 @@
       "images/*": ["src/statics/images/*"],
       "styles/*": ["src/statics/styles/*"],
       "components/*": ["src/components/*"],
-      "actions": ["src/redux/actions"],
+      "dispatchers": ["src/redux/dispatchers"],
+      "api": ["src/api"],
       "fonts/*": ["fonts/*"],
     }
   },

@@ -1,14 +1,10 @@
 import * as React from 'react';
-import { EntitySectionProps } from './types';
+import { EntitySectionProps, EntitySectionConnection } from './types';
 import Loading from 'components/Loading'
 import { connect } from 'react-redux'
-import actions from 'actions';
+import dispatchers from 'dispatchers';
 
-class EntitiesSection extends React.Component<EntitySectionProps, any> {
-  props:EntitySectionProps;
-  constructor (props:EntitySectionProps) {
-    super(props);
-  }
+class EntitiesSection extends React.Component<EntitySectionProps & EntitySectionConnection, any> {
 
   componentWillMount () {
     const {entityType} = this.props;
@@ -31,17 +27,14 @@ class EntitiesSection extends React.Component<EntitySectionProps, any> {
   }
 }
 
-const connector =  connect(
+
+export default connect(
   (state:any) => state,
   (dispatch) =>({
-    fetchEntities(entityType:string){
-      dispatch(actions.Entities.FETCH_ENTITY(entityType));
-    },
+    fetchEntities: (entityType:string)=> dispatchers.entities.FetchEntities(dispatch,entityType)
   }),
-)(EntitiesSection);
+)(EntitiesSection) as React.ComponentClass<EntitySectionProps>;
 
-
-export default connector;
 
 /*
 const mapStateToProps = (state) => {
