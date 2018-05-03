@@ -16,6 +16,8 @@
       "images/*": ["src/statics/images/*"],
       "styles/*": ["src/statics/styles/*"],
       "components/*": ["src/components/*"],
+      "actions": ["src/redux/actions"],
+      "fonts/*": ["fonts/*"],
     }
   },
   "exclude": [

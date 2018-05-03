@@ -14,7 +14,9 @@ module.exports = {
     alias: {
       images: path.join(__dirname,'src/statics/images'),
       styles: path.join(__dirname,'src/statics/styles'),
-      components: path.join(__dirname,'src/components')
+      components: path.join(__dirname,'src/components'),
+      actions: path.join(__dirname,'src/redux/actions'),
+      fonts: path.join(__dirname,'fonts')
     },
   },
   plugins: [

@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Loading from 'components/Loading';
+import EntitySection from 'components/EntitySection';
 
 const AppContent = () => (
   <div className="layout-viewport">
     <Switch>
       <Route exact path="/" render={props => <Loading {...props} show={false} local={true}/> } />
-      <Route exact path="/ips" render={props => <Loading {...props} show={false} local={true}/> } />
+      <Route exact path="/ips" component ={() => <EntitySection entityType="ips" /> } />
       <Route exact path="/alerts" render={props => <Loading {...props} show={true} local={true}/> } />
       <Route exact path="/domains" render={props => <Loading {...props} show={true} local={true}/> } />
       <Route exact path="/certificates" render={props => <Loading {...props} show={true} local={true}/> } />
