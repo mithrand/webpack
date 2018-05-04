@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { EntitySectionProps, EntitySectionConnection } from './types';
-import Loading from 'components/Loading'
 import { connect } from 'react-redux'
 import dispatchers from 'dispatchers';
+import * as classNames from 'classnames';
+import { EntitySectionProps, EntitySectionConnection } from './types';
+import Loading from 'components/Loading'
+import EntityHeader from './EntityHeader'
 
 class EntitiesSection extends React.Component<EntitySectionProps & EntitySectionConnection, any> {
 
@@ -13,15 +15,30 @@ class EntitiesSection extends React.Component<EntitySectionProps & EntitySection
 
   componentWillReceiveProps (newProps:EntitySectionProps) {
     if (this.props.entityType !== newProps.entityType) {
-      const {entityType} = this.props;
-      this.props.fetchEntities(entityType)
+      this.props.fetchEntities(newProps.entityType)
     }
   }
 
   render () {
+    const { isFetching, selectedEntity} = this.props;
+
+    const cardClasses = classNames({
+      'card':true,
+      'entities-table':true,
+      [selectedEntity]:true,
+    });
+
     return (
       <div className='container'>
-        <p>Entities section</p>
+        { isFetching ? 
+        (
+          <Loading show={true} local={true}/>
+        ):(
+          <div className={cardClasses}>
+            <EntityHeader {...this.props}/>
+          </div>
+        )
+        }
       </div>
     );
   }
@@ -29,32 +46,11 @@ class EntitiesSection extends React.Component<EntitySectionProps & EntitySection
 
 
 export default connect(
-  (state:any) => state,
+  (state:any) => ({
+    isFetching:state.IsFetching,
+    selectedEntity:state.selectedEntity,
+  }),
   (dispatch) =>({
     fetchEntities: (entityType:string)=> dispatchers.entities.FetchEntities(dispatch,entityType)
   }),
-)(EntitiesSection) as React.ComponentClass<EntitySectionProps>;
-
-
-/*
-const mapStateToProps = (state) => {
-  return ({
-    isFetchingEntities: state.entities.isFetchingEntities,
-    entries: state.entities.entries,
-    isFetchingEntity: state.entities.isFetchingEntity,
-    selectedEntity: state.entities.selectedEntity,
-    page: state.entities.page,
-    pageSize: state.entities.pageSize,
-    total: state.entities.total
-  })
-
-  const mapDispatchToProps = {
-  fetchEntities,
-  selectEntity,
-  setPageSize,
-  getPage
-}
-}
-
-*/
-
+)(EntitiesSection)

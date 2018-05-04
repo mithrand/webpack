@@ -2,7 +2,7 @@ import * as React from 'react';
 import './styles/App.scss';
 import * as AppTypes from './types/AppTypes';
 import NavBar from 'components/NavBar';
-import AppContent from './AppContent';
+import AppContent from '../../routes';
 
 // required images and fonts
 const headerDecorator = require('images/header-decorator.png');

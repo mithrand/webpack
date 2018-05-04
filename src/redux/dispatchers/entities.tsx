@@ -8,7 +8,7 @@ export function FetchEntities(dispatch: Dispatch<any>, entityType:string){
   axios(api.entities.getEntity(entityType))
   .then(res => {
     console.log(res.data);
-    dispatch(actions.Entities.ENTITY_FETCHED(entityType));
+    dispatch(actions.Entities.ENTITY_FETCHED(entityType,res.data));
   })
   .catch(error => {
     console.log(error.data);

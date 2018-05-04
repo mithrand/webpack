@@ -4,7 +4,6 @@ import 'styles/index.scss';
 import { AppProps } from './components/App/types/AppTypes';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
-import { routes } from './router/routes';
 import { Provider } from 'react-redux';
 import { store } from './redux/store'
 const appProps = { 

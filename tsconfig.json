@@ -17,6 +17,7 @@
       "styles/*": ["src/statics/styles/*"],
       "components/*": ["src/components/*"],
       "dispatchers": ["src/redux/dispatchers"],
+      "globals/*": ["src/globals/*"],
       "api": ["src/api"],
       "fonts/*": ["fonts/*"],
     }
