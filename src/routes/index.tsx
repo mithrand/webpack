@@ -4,6 +4,7 @@ import Loading from 'components/Loading';
 import EntitySection from 'components/EntitySection';
 import sectionsConfig from 'globals/SectionsConfig';
 
+/* Routes will be generated using global/SectionsConfig */
 const routes = sectionsConfig
                 .map(section => (
                   <Route  path={section.routePath} 

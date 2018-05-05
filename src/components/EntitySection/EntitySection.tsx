@@ -5,6 +5,7 @@ import * as classNames from 'classnames';
 import { EntitySectionProps, EntitySectionConnection } from './types';
 import Loading from 'components/Loading'
 import EntityHeader from './EntityHeader'
+import DataTable from 'components/DataTable';
 
 class EntitiesSection extends React.Component<EntitySectionProps & EntitySectionConnection, any> {
 
@@ -36,6 +37,7 @@ class EntitiesSection extends React.Component<EntitySectionProps & EntitySection
         ):(
           <div className={cardClasses}>
             <EntityHeader {...this.props}/>
+            <DataTable/>
           </div>
         )
         }

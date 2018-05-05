@@ -1,0 +1,130 @@
+@import '~/../src/statics/styles/base';
+
+@mixin typo-icon() {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  word-wrap: normal;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.data-table {
+  table {
+    width: 100%;
+    th.sortable {
+      cursor: pointer;
+      &:before {
+        @include typo-icon;
+        content: "\e5db";
+        color: #DDDDDD;
+        font-size: 16px;
+        padding-right: 5px;
+        vertical-align: sub;
+      }
+    }
+
+    th.sort-desc {
+      &:before {
+        color: #555555;
+        content: "\e5db";
+      }
+    }
+    th.sort-asc {
+      &:before {
+        color: #555555;
+        content: "\e5d8";
+      }
+    }
+    tr {
+      td {
+        background: #FFFFFF;
+      }
+    }
+    tr:nth-child(2n) {
+      td {
+        background: #F6F9FC;
+      }
+    }
+    th.header-select,
+    td.row-select {
+      padding: 8px 8px 8px 24px;
+      width: 57px;
+    }
+
+    th, td {
+      padding: 10px;
+    }
+
+
+    th.number,
+    td.number {
+      text-align: right;
+    }
+
+    th.graphic,
+    td.graphic {
+      text-align: center;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 20px;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: 20px;
+    }
+  }
+
+  .selected-text {
+    margin-left: 5px;
+  }
+
+  .entries-per-page {
+    width: 250px;
+  }
+
+  .pre-row {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    .group {
+      align-items: center;
+      display: flex;
+      flex: 0 0 auto;
+      position: relative;
+      transition: opacity 0.5s;
+      &.disabled {
+        opacity: 0.25;
+      }
+    }
+    .results-count {
+      margin-left: 10px;
+    }
+  }
+
+  .pagination {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    > * {
+      flex: 0 0 auto;
+    }
+  }
+  .empty-datatable {
+    color: #CCC;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }
+}
