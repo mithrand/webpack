@@ -1,11 +1,17 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { DataTableSizeSelectorConnected } from './types';
+import { DataTableSizeSelectorProps,DataTableSizeSelectorConnected } from './types';
+import dispatchers from 'dispatchers';
 import * as classNames from 'classnames';
 
-export const DataTableSizeSelector = (props:DataTableSizeSelectorConnected) => {
+export const DataTableSizeSelector = (props:DataTableSizeSelectorProps & DataTableSizeSelectorConnected) => {
+  const { numPerPage } = props;
+  const onSelectChange= (event:any) => {
+    props.UpdateNumPerPage(event.target.value)
+  }
+  
   return(
-    <select defaultValue={this.props.numPerPage} className='pageSize'>
+    <select defaultValue={numPerPage.toString()} onChange={onSelectChange} className='pageSize'>
       <option value='10'>10 items</option>
       <option value='25'>25 items</option>
       <option value='50'>50 items</option>
@@ -14,10 +20,10 @@ export const DataTableSizeSelector = (props:DataTableSizeSelectorConnected) => {
 }
 
 export default connect(
-  (state)=>({
-
+  (state:any)=>({
+    numPerPage: state.numPerPage
   }),
-  (dispacher)=>({
-
+  (dispatch)=>({
+    UpdateNumPerPage: (numPerPage:number)=> dispatchers.entities.UpdateNumPerPage(dispatch,numPerPage),
   }),
 )(DataTableSizeSelector);

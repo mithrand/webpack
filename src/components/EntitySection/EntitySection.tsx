@@ -51,6 +51,7 @@ export default connect(
   (state:any) => ({
     isFetching:state.IsFetching,
     selectedEntity:state.selectedEntity,
+    numPerPage: state.numPerPage,
   }),
   (dispatch) =>({
     fetchEntities: (entityType:string)=> dispatchers.entities.FetchEntities(dispatch,entityType)

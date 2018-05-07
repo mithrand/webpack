@@ -15,3 +15,7 @@ export function FetchEntities(dispatch: Dispatch<any>, entityType:string){
     dispatch(actions.Entities.ENTITY_FETCH_ERROR(entityType));
   });
 }
+
+export function UpdateNumPerPage(dispatch: Dispatch<any>, numPerPage:number){
+  dispatch(actions.Entities.UPDATE_NUM_PER_PAGE(numPerPage));
+}

@@ -7,6 +7,7 @@ export interface IEntitiesState {
   selectedEntity?:string;
   fetchError:boolean;
   entities?:{total:number,[id:string]:any};
+  numPerPage:number;
 }
 
 const initialState:IEntitiesState = {
@@ -14,6 +15,7 @@ const initialState:IEntitiesState = {
   selectedEntity:null,
   fetchError:false,
   entities:null,
+  numPerPage:10,
 }
 
 const reducer = CreateReducer(initialState, {
@@ -33,6 +35,10 @@ const reducer = CreateReducer(initialState, {
   },
   [ActionsTypes.Entities.ENTITY_FETCH_ERROR]: (state:IEntitiesState, action:any):IEntitiesState => {
     return {...state, IsFetching:false, fetchError:true, entities:null};
+  },
+  [ActionsTypes.Entities.UPDATE_NUM_PER_PAGE]: (state:IEntitiesState, action:any):IEntitiesState => {
+    const {numPerPage} = action.payload;
+    return {...state,numPerPage:numPerPage };
   },
 });
 

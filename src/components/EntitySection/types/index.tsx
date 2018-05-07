@@ -15,5 +15,6 @@ export interface EntityHeaderConnection {
 export interface EntitySectionConnection{
   isFetching: boolean,
   selectedEntity: string,
+  numPerPage:number,
   fetchEntities(entityType:string):void;
 }

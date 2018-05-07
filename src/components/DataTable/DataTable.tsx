@@ -3,7 +3,7 @@ import './styles/DataTable.scss';
 import * as numeral from 'numeral';
 import { connect } from 'react-redux'
 import { DataTableProps,DataTableConnected } from './types';
-import { DataTableSizeSelector } from './DataTableSizeSelector';
+import DataTableSizeSelector  from './DataTableSizeSelector';
 import * as classNames from 'classnames';
 
 export class DataTable extends React.Component<DataTableProps & DataTableConnected,any> {
