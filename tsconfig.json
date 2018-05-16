@@ -5,7 +5,7 @@
     "noImplicitAny": true,
     "module": "CommonJS",
     "moduleResolution":"node",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "allowJs": true,
     "checkJs":true,
@@ -16,10 +16,11 @@
       "images/*": ["src/statics/images/*"],
       "styles/*": ["src/statics/styles/*"],
       "components/*": ["src/components/*"],
-      "dispatchers": ["src/redux/dispatchers"],
       "globals/*": ["src/globals/*"],
-      "api": ["src/api"],
       "fonts/*": ["fonts/*"],
+      "api": ["src/api"],
+      "dispatchers": ["src/redux/dispatchers"],
+      "state": ["src/redux/store/state"],
     }
   },
   "exclude": [

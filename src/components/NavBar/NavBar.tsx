@@ -21,10 +21,10 @@ export const NavBar = (props:NavBarProps) => {
      [`icon-${icon}`]:true,
   })
 
-  const sectionsLinks = sectionsConfig.map(section => {
+  const sectionsLinks = sectionsConfig.map((section,i) => {
     const { routePath,icon,title } = section;
     return(
-      <Link to={routePath} className={linkClasses(routePath)}>
+      <Link key={i} to={routePath} className={linkClasses(routePath)}>
         <span className={iconClasses(icon)} />
         <div className="navbar-label">{title}</div>
       </Link>

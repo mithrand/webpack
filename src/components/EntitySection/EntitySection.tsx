@@ -8,15 +8,19 @@ import EntityHeader from './EntityHeader'
 import DataTable from 'components/DataTable';
 
 class EntitiesSection extends React.Component<EntitySectionProps & EntitySectionConnection, any> {
-
+  forceFetch:boolean = false;
   componentWillMount () {
     const {entityType} = this.props;
     this.props.fetchEntities(entityType)
+    this.forceFetch = true;
   }
 
   componentWillReceiveProps (newProps:EntitySectionProps) {
     if (this.props.entityType !== newProps.entityType) {
       this.props.fetchEntities(newProps.entityType)
+      this.forceFetch = true;
+    }else{
+      this.forceFetch = false;
     }
   }
 
@@ -31,7 +35,7 @@ class EntitiesSection extends React.Component<EntitySectionProps & EntitySection
 
     return (
       <div className='container'>
-        { isFetching ? 
+        { isFetching || this.forceFetch ? 
         (
           <Loading show={true} local={true}/>
         ):(

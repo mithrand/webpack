@@ -18,7 +18,8 @@ module.exports = {
       dispatchers: path.join(__dirname,'src/redux/dispatchers'),
       api: path.join(__dirname,'src/api'),
       globals: path.join(__dirname,'src/globals'),
-      fonts: path.join(__dirname,'fonts')
+      fonts: path.join(__dirname,'fonts'),
+      state: path.join(__dirname,'src/redux/store/state')
     },
   },
   plugins: [
