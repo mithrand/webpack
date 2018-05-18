@@ -1,6 +1,7 @@
 import { CreateReducer } from './utils';
 import { Actions, ActionsTypes } from '../actions';
 import { initialState, IEntitiesState  } from '../store/state';
+import SectionsConfig from 'globals/SectionsConfig';
 
 const reducer = CreateReducer(initialState, {
   [ActionsTypes.Entities.ENTITY_FETCHING]: (state:IEntitiesState, action:{payload:{entityType:string}} ):IEntitiesState => {
@@ -9,12 +10,14 @@ const reducer = CreateReducer(initialState, {
   },
   [ActionsTypes.Entities.ENTITY_FETCHED]: (state:IEntitiesState, action:{payload:{entityType:string,entities:any}}):IEntitiesState => {
     const {entityType, entities} = action.payload;
+    const selectedSection = SectionsConfig.find(x => x.entityType === entityType );
     return {  
       ...state,
       IsFetching:false,
       fetchError:false,
       selectedEntity: entityType,
       entities:entities,
+      sectionConfig: selectedSection || null
     };
   },
   [ActionsTypes.Entities.ENTITY_FETCH_ERROR]: (state:IEntitiesState, action:any):IEntitiesState => {

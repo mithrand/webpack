@@ -19,7 +19,7 @@ class EntitiesSection extends React.Component<EntitySectionProps & EntitySection
     if (this.props.entityType !== newProps.entityType) {
       this.props.fetchEntities(newProps.entityType)
       this.forceFetch = true;
-    }else{
+    } else {
       this.forceFetch = false;
     }
   }

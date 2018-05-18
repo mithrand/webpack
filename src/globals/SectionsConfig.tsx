@@ -9,6 +9,13 @@ export interface ISection {
   apiCollectionName:string; // nombre de la coleccion en la api, normalmente en plural
   routePath:string; // routa de la url a utilizar
   component:React.ComponentType<any> // tipo de vista que se utilizara (entitySection o dashboar)
+  columns:{key:string,caption:string, dataType:string}[];
+}
+
+export interface columnConfig {
+  key:string;
+  caption:string;
+  dataType:string;
 }
 
 export const SectionsConfig: {[SectionName: string] : ISection } = {
@@ -20,6 +27,13 @@ export const SectionsConfig: {[SectionName: string] : ISection } = {
     apiCollectionName:'alerts',
     routePath:"/alerts",
     component: entitySection,
+    columns:[
+      { key:"confirmed",caption:"Confirmed",dataType:"Confirmation" },
+      { key:"ip",caption:"IP",dataType:"Link" },
+      { key:"Tracked",caption:"Tracked",dataType:"DateTime" },
+      { key:"Alerts",caption:"Alerts",dataType:"list" },
+      { key:"Tags",caption:"Tags",dataType:"List" },
+    ],
   },
   'ips':{ 
     title:"Ips", 
@@ -29,6 +43,13 @@ export const SectionsConfig: {[SectionName: string] : ISection } = {
     apiCollectionName:'ips',
     routePath:"/ips",
     component: entitySection,
+    columns:[
+      { key:"confirmed",caption:"Confirmed",dataType:"Confirmation" },
+      { key:"ip",caption:"IP",dataType:"Link" },
+      { key:"Tracked",caption:"Tracked",dataType:"DateTime" },
+      { key:"Alerts",caption:"Alerts",dataType:"list" },
+      { key:"Tags",caption:"Tags",dataType:"List" },
+    ],
   },
   'domains':{ 
     title:"Domains", 
@@ -38,6 +59,13 @@ export const SectionsConfig: {[SectionName: string] : ISection } = {
     apiCollectionName:'domains',
     routePath:"/domains",
     component: entitySection,
+    columns:[
+      { key:"confirmed",caption:"Confirmed",dataType:"Confirmation" },
+      { key:"ip",caption:"IP",dataType:"Link" },
+      { key:"Tracked",caption:"Tracked",dataType:"DateTime" },
+      { key:"Alerts",caption:"Alerts",dataType:"list" },
+      { key:"Tags",caption:"Tags",dataType:"List" },
+    ],
   },
   'certificates':{ 
     title:"Certificates", 
@@ -47,6 +75,13 @@ export const SectionsConfig: {[SectionName: string] : ISection } = {
     apiCollectionName:'certificates',
     routePath:"/certificates",
     component: entitySection,
+    columns:[
+      { key:"confirmed",caption:"Confirmed",dataType:"Confirmation" },
+      { key:"ip",caption:"IP",dataType:"Link" },
+      { key:"Tracked",caption:"Tracked",dataType:"DateTime" },
+      { key:"Alerts",caption:"Alerts",dataType:"list" },
+      { key:"Tags",caption:"Tags",dataType:"List" },
+    ],
   },
   'pastebins':{ 
     title:"Pastebins", 
@@ -56,6 +91,13 @@ export const SectionsConfig: {[SectionName: string] : ISection } = {
     apiCollectionName:'pastebins',
     routePath:"/pastebins",
     component: entitySection,
+    columns:[
+      { key:"confirmed",caption:"Confirmed",dataType:"Confirmation" },
+      { key:"ip",caption:"IP",dataType:"Link" },
+      { key:"Tracked",caption:"Tracked",dataType:"DateTime" },
+      { key:"Alerts",caption:"Alerts",dataType:"list" },
+      { key:"Tags",caption:"Tags",dataType:"List" },
+    ],
   },
   'emails':{ 
     title:"Emails", 
@@ -65,6 +107,13 @@ export const SectionsConfig: {[SectionName: string] : ISection } = {
     apiCollectionName:'emails',
     routePath:"/emails",
     component: entitySection,
+    columns:[
+      { key:"confirmed",caption:"Confirmed",dataType:"Confirmation" },
+      { key:"ip",caption:"IP",dataType:"Link" },
+      { key:"Tracked",caption:"Tracked",dataType:"DateTime" },
+      { key:"Alerts",caption:"Alerts",dataType:"list" },
+      { key:"Tags",caption:"Tags",dataType:"List" },
+    ],
   },
 }
 

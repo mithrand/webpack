@@ -1,3 +1,5 @@
+import { ISection } from 'globals/SectionsConfig';
+
 export interface DataTableProps {
 
 }
@@ -32,4 +34,5 @@ export interface DataTableBodyProps {
 export interface DataTableBodyConnected { 
   entities?:{ total:number,[id:string]:any };
   selectedEntity?:string;
+  sectionConfig: ISection;
 }

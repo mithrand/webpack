@@ -19,7 +19,7 @@ export const NavBar = (props:NavBarProps) => {
   const iconClasses = (icon:string) => classNames({
     'icon':true,
      [`icon-${icon}`]:true,
-  })
+  });
 
   const sectionsLinks = sectionsConfig.map((section,i) => {
     const { routePath,icon,title } = section;

@@ -7,9 +7,7 @@ import sectionsConfig from 'globals/SectionsConfig';
 /* Routes will be generated using global/SectionsConfig */
 const routes = sectionsConfig
                 .map((section,i) => (
-                  <Route key={i}  path={section.routePath} 
-                          render={props => <section.component {...props} {...section} />}
-                    />
+                  <Route key={i}  path={section.routePath} render={props => <section.component {...props} {...section} />} />
                 ));
 
 const AppContent = () => (

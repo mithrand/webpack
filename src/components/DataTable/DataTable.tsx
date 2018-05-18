@@ -10,12 +10,13 @@ import * as classNames from 'classnames';
 import { TableBody } from 'material-ui';
 
 export class DataTable extends React.Component<DataTableProps & DataTableConnected,any> {
+
   render () {
     return (
       <div className="data-table">
         <div className="data-table-content">
             <div className="pre-row">
-                <DataTableHeader/>
+              <DataTableHeader/>
             </div>
             <div>
               <DataTableBody/>
